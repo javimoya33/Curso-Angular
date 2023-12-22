@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Configuracion } from './models/configuracion';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'segundo-proyecto';
+  public title = 'Master de Javascript y Angular';
+  public description: string;
+  public config;
+
+  constructor() {
+    this.config = Configuracion;
+    this.title = Configuracion.titulo;
+    this.description = Configuracion.descripcion
+  }
 }
