@@ -1,7 +1,12 @@
 <h2>{{titulo}}</h2>
+<p>Añadir nueva marca</p>
+<input type="text" [(ngModel)]="nueva_marca" />
+<button (click)="addMarca()">Añadir marca</button>
+{{nueva_marca}}
+
 <p>Compara las zapatillas de las mejores marcas</p>
 <ul>
-	<li *ngFor="let marca of marcas">{{marca}}</li>
+	<li *ngFor="let marca of marcas; let indice = index">{{indice + ' - ' + marca}}</li>
 </ul>
 <p>Las deportivas disponibles</p>
 <ul>
@@ -16,6 +21,7 @@
 </ul>
 
 <p>El color de la mayoría de nuestras zapatillas es:</p>
+<input type="text" [(ngModel)]="color" />
 <ul [ngSwitch]="color">
 	<li *ngSwitchCase="'gray'">
 		El color predominante es el <span [ngStyle]="{'background': color, 'color': 'white'}">gris</span>.

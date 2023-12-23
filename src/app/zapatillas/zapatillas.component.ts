@@ -10,8 +10,10 @@ export class ZapatillasComponent implements OnInit {
 	public zapatillas: Array<Zapatilla>;
 	public marcas: String[];
 	public color: string;
+	public nueva_marca: string;
 
 	constructor() {
+		this.nueva_marca = "Fila";
 		this.color = "gray";
 		this.marcas = new Array();
 		this.zapatillas = [
@@ -22,6 +24,8 @@ export class ZapatillasComponent implements OnInit {
 
 	ngOnInit(){
 		console.log(this.zapatillas);
+
+		this.getMarcas();
 	}
 
 	getMarcas() {
@@ -31,5 +35,13 @@ export class ZapatillasComponent implements OnInit {
 				this.marcas.push(zapatilla.marca);
 			}
 		});
+	}
+
+	getMarca() {
+		
+	}
+
+	addMarca() {
+		this.marcas.push(this.nueva_marca);
 	}
 }
