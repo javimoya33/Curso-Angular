@@ -1,0 +1,12 @@
+.precioAlto {
+	font-size: 18px;
+	color: red;
+}
+
+.fondoNegro {
+	background: black;
+}
+
+.subrayado {
+	text-decoration: underline;
+}
