@@ -10,6 +10,7 @@ export class CursosComponent implements OnInit {
 
   public nombre: string = "";
   public alumnos: number;
+  public inicioSesion: boolean;
 
   constructor(
     private _route: ActivatedRoute,
@@ -17,6 +18,7 @@ export class CursosComponent implements OnInit {
 
     this.nombre = "";
     this.alumnos = 0;
+    this.inicioSesion = false;
   }
 
   ngOnInit() {
@@ -33,5 +35,9 @@ export class CursosComponent implements OnInit {
 
   redirigir() {
     this._router.navigate(['/zapatillas']);
+  }
+
+  iniciarSesion() {
+    this.inicioSesion = true;
   }
 }

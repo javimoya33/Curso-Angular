@@ -1,5 +1,14 @@
-<h1>cursos works!</h1>
-<p *ngIf="nombre">Bienvenido {{nombre}}</p>
-<p *ngIf="alumnos">Los alumnos de este curso son {{alumnos}}</p>
-
 <button (click)="redirigir()">Zapatillas</button>
+
+<div *ngIf="inicioSesion; then SiInicioSesion else NoInicioSesion"></div>
+
+<ng-template #SiInicioSesion>
+	<h1>cursos works!</h1>
+	<p *ngIf="nombre">Bienvenido {{nombre}}</p>
+	<p *ngIf="alumnos">Los alumnos de este curso son {{alumnos}}</p>
+</ng-template>
+
+<ng-template #NoInicioSesion>
+	<p>No has iniciado sesión. Pulsa en Iniciar Sesión.</p>
+	<button (click)="iniciarSesion()">Iniciar Sesión</button>
+</ng-template>
