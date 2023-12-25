@@ -225,12 +225,22 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <videojuego></videojuego>
-      <zapatillas></zapatillas>
       <h1 [ngStyle]="{
         'background': 'white', 
         'color': config.color}">Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
+
+      <nav>
+        <a [routerLink]="['/zapatillas']" [routerLinkActive]="['active']">Zapatillas</a>
+        &nbsp;
+        <a [routerLink]="['/cursos']" [routerLinkActive]="['active']">Cursos</a>
+        &nbsp;
+        <a [routerLink]="['/videojuego']" [routerLinkActive]="['active']">Videojuego</a>
+      </nav>
+
+      <hr/>
+
+      <router-outlet></router-outlet>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
@@ -335,6 +345,3 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
-
-<router-outlet></router-outlet>
